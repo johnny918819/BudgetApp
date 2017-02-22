@@ -1,0 +1,73 @@
+﻿<div>
+    <table class="table-responsive table-hover tableTemplate tbody-td">
+        <caption>{{controller.budget.name}} Budget</caption>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Amount</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><u>Income</u></td>
+                <td></td>
+                <td>
+                    <button class="btn-sm btn-default" ui-sref="addIncome">
+                        Add Income
+                    </button>
+                </td>
+            </tr>
+            <tr ng-repeat="income in controller.budget.incomes">
+                <td>{{income.name}}</td>
+                <td class="positive">
+                    ${{income.amount}}
+                </td>
+                <td>
+                    <i class="material-icons button edit" ui-sref="editIncome({id: income.id})">edit</i> <!--Working here-->
+                    <form>
+                        <i class="text-right material-icons button delete">delete</i> <!--Working here-->
+                    </form>
+                </td>
+            </tr>
+            <tr>
+                <td><u>Bills</u></td>
+                <td></td>
+                <td>
+                    <button class="btn-sm btn-default" ui-sref="addBill">
+                        Add Bill
+                    </button>
+                </td>
+            </tr>
+            <tr ng-repeat="bill in controller.budget.bills">
+                <td>{{bill.name}}</td>
+                <td class="negative">
+                    $({{bill.amount}})
+                </td>
+                <td>
+                    <i class="material-icons button edit">edit</i> <!--Make this button work-->
+                    <i class="text-right material-icons button delete">delete</i> <!--Make this button work-->
+                </td>
+            </tr>
+            <tr>
+                <td><u>Goal Contributions</u></td>
+                <td></td>
+                <td>
+                    <button class="btn-sm btn-default" ui-sref="addGoal">
+                        Add Goal
+                    </button>
+                </td>
+            </tr>
+            <tr ng-repeat="goal in controller.budget.goals">
+                <td>{{goal.name}}</td>
+                <td class="negative">
+                    ${{goal.amount}}
+                </td>
+                <td>
+                    <i class="material-icons button edit">edit</i> <!--Make this button work-->
+                    <i class="text-right material-icons button delete">delete</i> <!--Make this button work-->
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

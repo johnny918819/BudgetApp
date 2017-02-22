@@ -1,0 +1,37 @@
+﻿<form ng-submit="controller.addIncome()">
+    <table class="table-responsive table-hover tableTemplate tbody-td">
+        <caption>Fill in the fields below to add a new income</caption>
+        <thead>
+            <tr>
+                <th>Category</th>
+                <th>Input</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Name</td>
+                <td>
+                    <input type="text" class="input-sm" ng-model="controller.income.name" />
+                </td>
+            </tr>
+            <tr>
+                <td>Amount</td>
+                <td>
+                    <input type="text" class="input-sm" ng-model="controller.income.amount" />
+                </td>
+            </tr>
+            <tr>
+                <td>Budget</td>
+                <td>
+                    <select ng-model="controller.income.budget.id" ng-options="inc.id as inc.name for inc in controller.budgets">
+                        <option>Select a Budget</option>
+                    </select>
+                </td>
+                <td>
+                    <button type="submit" class="btn-default btn-sm">Add Income</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</form>

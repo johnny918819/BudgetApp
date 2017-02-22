@@ -1,0 +1,54 @@
+<html ng-app="BudgetApp">
+<head>
+    <title>Budgetty</title>
+    <link rel="shortcut icon" type="image/x-icon" href="~/images/favicon.ico">
+    <link href="/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="/bower_components/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet" />
+    <link href="~/css/site.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <base href="/" />
+</head>
+<body ng-controller="AccountController as account">
+    <img class="logo pointer" src="~/images/BudgettyLogo.png" ui-sref="home" height="100" />
+
+    <div class="text-right signInButton" ng-show="!account.isLoggedIn()">
+        Already a member?
+        <button class="bluebutton" ui-sref="login">Sign In Here</button>
+    </div>
+    <div class="text-right signInButton" ng-show="account.isLoggedIn()">
+        Logged in as {{account.getUserName()}}
+        @* Make this an admin access only view link...
+        <div ng-show="account.isAdmin()">
+        <a href="/secret">Proceed to Admin view</a>
+        </div>
+        *@
+        <br />
+        Not you? All done?
+        <button ng-click="account.logout()" class="bluebutton">Sign Out Here</button>        
+    </div>
+    <div class="container">
+        <ui-view></ui-view>
+    </div>
+
+    <!-- Library Files -->
+    <script src="/bower_components/angular/angular.js"></script>
+    <script src="/bower_components/angular-resource/angular-resource.js"></script>
+    <script src="/bower_components/angular-animate/angular-animate.js"></script>
+    <script src="/bower_components/angular-touch/angular-touch.js"></script>
+    <script src="/bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+
+    <!-- App Files-->
+    <script src="/ngapp/app.js"></script>
+    <script src="/ngapp/controllers/controllers.js"></script>
+    <script src="/ngapp/services/services.js"></script>
+
+
+    <!-- Security -->
+    <script src="/ngapp/controllers/accountcontroller.js"></script>
+    <script src="/ngapp/services/accountservice.js"></script>
+
+</body>
+</html>

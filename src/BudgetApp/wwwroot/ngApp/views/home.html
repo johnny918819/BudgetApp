@@ -1,0 +1,39 @@
+<!-- A logged in user will see this... -->
+<div>
+    <center>
+        <table class="table-responsive table-hover tableTemplate tbody-td" ng-show="account.isLoggedIn()">
+            <thead>
+                <tr>
+                    <th colspan="3">
+                        Budget Overview : Select a budget to view details or
+                        <button class="btn-sm btn-default" ui-sref="addBudget">
+                            Add a new budget
+                        </button>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="bud in controller.budgets">
+                    <td ui-sref="details({id: bud.id})" class="pointer">
+                        {{bud.name}}
+                    </td>
+                    <td>
+                        <i class="material-icons button edit">edit</i>
+                        <i class="text-right material-icons button delete">delete</i>
+                    </td>
+            </tbody>
+        </table>
+    </center>
+</div>
+<!-- An annonymous user will see this... -->
+<center>
+    <div class="signup centered backgound-white-transparent border-dotted" ng-show="!account.isLoggedIn()">
+        Don't have account with us yet?
+        <br />
+        <br />
+        <button class="ltbluebutton" ui-sref="register">Sign up here</button>
+        <br />
+        ...It's free and easy! <img src="http://pix.iemoji.com/images/emoji/apple/ios-9/256/winking-face.png" width="17" />
+        <br />
+    </div>
+</center>
