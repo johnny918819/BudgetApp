@@ -3,15 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using BudgetApp.Data;
 using BudgetApp.Models;
 using BudgetApp.Interfaces;
-using Microsoft.EntityFrameworkCore;
 
 // For more information on enabling Web API for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace BudgetApp.API
-
 {
     [Route("api/[controller]")]
     public class BillsController : Controller
@@ -49,8 +46,8 @@ namespace BudgetApp.API
             }
         }
 
-        [HttpDelete]
-        public IActionResult Delete([FromBody] int id)
+        [HttpDelete("{id}")]
+        public IActionResult Delete(int id)
         {
             _billsService.DeleteBill(id);
             return Ok();

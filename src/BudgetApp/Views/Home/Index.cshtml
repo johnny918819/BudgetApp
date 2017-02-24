@@ -18,12 +18,11 @@
         <button class="bluebutton" ui-sref="login">Sign In Here</button>
     </div>
     <div class="text-right signInButton" ng-show="account.isLoggedIn()">
-        Logged in as {{account.getUserName()}}
-        @* Make this an admin access only view link...
-        <div ng-show="account.isAdmin()">
-        <a href="/secret">Proceed to Admin view</a>
+        <div ng-show="account.isLoggedIn()">
+            <button ui-sref="admin" class="btn-default">Admin</button>
         </div>
-        *@
+
+        Logged in as {{account.getUserName()}}      
         <br />
         Not you? All done?
         <button ng-click="account.logout()" class="bluebutton">Sign Out Here</button>        

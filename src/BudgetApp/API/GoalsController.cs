@@ -6,7 +6,6 @@ using Microsoft.AspNetCore.Mvc;
 using BudgetApp.Models;
 using BudgetApp.Interfaces;
 
-
 // For more information on enabling Web API for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace BudgetApp.API
@@ -47,8 +46,8 @@ namespace BudgetApp.API
             }
         }
 
-        [HttpDelete]
-        public IActionResult Delete([FromBody] int id)
+        [HttpDelete("{id}")]
+        public IActionResult Delete(int id)
         {
             _goalsService.DeleteGoal(id);
             return Ok();

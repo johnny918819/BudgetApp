@@ -46,8 +46,8 @@ namespace BudgetApp.API
             }
         }
 
-        [HttpDelete]
-        public IActionResult Delete([FromBody] int id)
+        [HttpDelete("{id}")]
+        public IActionResult Delete(int id)
         {
             _incomesService.DeleteIncome(id);
             return Ok();

@@ -1,0 +1,19 @@
+﻿<div class="container">
+    <form ng-submit="controller.editBudget()">
+        <table class="table-responsive table-hover tableTemplate tbody-td">
+            <caption>Edit existing Budget</caption>
+            <thead>
+                <tr>
+                    <th>Name of Budget</th>
+                    <th><button ui-sref="home" class="btn-sm btn-default">Return Home</button></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><input type="text" class="input-sm" ng-model="controller.budget.name" /></td>
+                    <td><input type="submit" value="Edit Budget" class="btn-sm btn-default" /></td>
+                </tr>
+            </tbody>
+        </table>  
+    </form>
+</div>

@@ -1,18 +1,31 @@
 ﻿<div class="container">
-    <form ng-submit="controller.editIncome()" class="form-control">
-        <label>Name</label>
-        <input type="text" ng-model="controller.income.name" />
-        <label>Amount</label>
-        <input type="text" ng-model="controller.income.amount" />
-        <label>Budget</label>
-        <label>Select Budget:</label>
-        <select ng-model="controller.income.budget.id" ng-options="bud.id as bud.name for bud in controller.budgets">
-            <option value="({id: income.id})">Select Budget</option>
-        </select>
-        <input type="submit" value="Edit Income" class="btn-sm btn-default" />
+    <form ng-submit="controller.editIncome()">
+        <table class="table-responsive table-hover tableTemplate tbody-td">
+            <caption>Edit an existing Income</caption>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Amount</th>
+                    <th>Budget</th>
+                    <th><button ui-sref="home" class="btn-sm btn-default">Return Home</button></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><input type="text" class="input-sm" ng-model="controller.income.name" /></td>
+                    <td><input type="text" class="input-sm" ng-model="controller.income.amount" /></td>
+                    <td>
+                        Select Budget:<select ng-model="controller.income.budget.id" ng-options="bud.id as bud.name for bud in controller.budgets">
+                            <option value="({id: income.id})">Select Budget</option>
+                        </select>
+                    </td>
+                    <td>
+                        <input type="submit" value="Edit Income" class="btn-sm btn-default" />
+                    </td>
+                </tr>
+            </tbody>
+        </table>
     </form>
 </div>
-1{{controller.income.name}}
-2{{controller.name}}
-3{{controller.budget.income.name}}
-<button ng-click="controller.editIncome()">thing</button>
+
+

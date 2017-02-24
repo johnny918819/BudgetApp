@@ -1,0 +1,29 @@
+﻿<div class="container">
+    <form ng-submit="controller.editBill()">
+        <table class="table-responsive table-hover tableTemplate tbody-td">
+            <caption>Edit an existing Bill</caption>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Amount</th>
+                    <th>Budget</th>
+                    <th><button ui-sref="home" class="btn-sm btn-default">Return Home</button></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><input type="text" class="input-sm" ng-model="controller.bill.name" /></td>
+                    <td><input type="text" class="input-sm" ng-model="controller.bill.amount" /></td>
+                    <td>
+                        Select Budget:<select ng-model="controller.bill.budget.id" ng-options="bud.id as bud.name for bud in controller.budgets">
+                            <option value="({id: bill.id})">Select Budget</option>
+                        </select>
+                    </td>
+                    <td>
+                        <input type="submit" value="Edit Bill" class="btn-sm btn-default" />
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+</div>

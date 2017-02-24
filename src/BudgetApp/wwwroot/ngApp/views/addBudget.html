@@ -1,8 +1,17 @@
-﻿<center>
-    <form ng-submit="controller.addBudget()">
-        <label>Name of new budget:</label>
-        <br />
-        <input type="text" ng-model="controller.budget.name" />
-        <input type="submit" value="Add" />
-    </form>
-</center>
+﻿<form ng-submit="controller.addBudget()">
+    <table class="table-responsive table-hover tableTemplate tbody-td">
+        <caption>Add a new Budget</caption>
+        <thead>
+            <tr>
+                <th>Name of new Budget</th>
+                <th><button ui-sref="home" class="btn-sm btn-default">Return Home</button></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><input type="text" class="input-sm" ng-model="controller.budget.name" /></td>
+                <td><input type="submit" value="Add Budget" class="btn-sm btn-default"/></td>
+            </tr>
+        </tbody>
+    </table>    
+</form>

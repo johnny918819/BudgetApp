@@ -5,7 +5,7 @@
             <tr>
                 <th>Name</th>
                 <th>Amount</th>
-                <th></th>
+                <th><button ui-sref="home" class="btn-sm btn-default">Return Home</button></th>
             </tr>
         </thead>
         <tbody>
@@ -24,10 +24,8 @@
                     ${{income.amount}}
                 </td>
                 <td>
-                    <i class="material-icons button edit" ui-sref="editIncome({id: income.id})">edit</i> <!--Working here-->
-                    <form>
-                        <i class="text-right material-icons button delete">delete</i> <!--Working here-->
-                    </form>
+                    <i class="material-icons button edit" ui-sref="editIncome({id: income.id})">edit</i> 
+                    <i class="text-right material-icons button delete" ng-click="controller.deleteIncome(income.id)">delete</i>
                 </td>
             </tr>
             <tr>
@@ -45,8 +43,8 @@
                     $({{bill.amount}})
                 </td>
                 <td>
-                    <i class="material-icons button edit">edit</i> <!--Make this button work-->
-                    <i class="text-right material-icons button delete">delete</i> <!--Make this button work-->
+                    <i class="material-icons button edit" ui-sref="editBill({id: bill.id})">edit</i>
+                    <i class="text-right material-icons button delete" ng-click="controller.deleteBill(bill.id)">delete</i>
                 </td>
             </tr>
             <tr>
@@ -64,8 +62,8 @@
                     ${{goal.amount}}
                 </td>
                 <td>
-                    <i class="material-icons button edit">edit</i> <!--Make this button work-->
-                    <i class="text-right material-icons button delete">delete</i> <!--Make this button work-->
+                    <i class="material-icons button edit" ui-sref="editGoal({id: goal.id})">edit</i>
+                    <i class="text-right material-icons button delete" ng-click="controller.deleteGoal(goal.id)">delete</i>
                 </td>
             </tr>
         </tbody>

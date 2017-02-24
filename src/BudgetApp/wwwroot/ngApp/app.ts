@@ -25,10 +25,22 @@ namespace BudgetApp {
                 controller: BudgetApp.Controllers.AddBudgetController,
                 controllerAs: 'controller'
             })
+            .state('editBudget', {
+                url: '/editBudget/:id',
+                templateUrl: '/ngApp/views/editBudget.html',
+                controller: BudgetApp.Controllers.EditBudgetController,
+                controllerAs: 'controller'
+            })
             .state('addBill', {
                 url: '/addBill',
                 templateUrl: '/ngApp/views/addBill.html',
                 controller: BudgetApp.Controllers.AddBillController,
+                controllerAs: 'controller'
+            })
+            .state('editBill', {
+                url: '/editBill/:id',
+                templateUrl: '/ngApp/views/editBill.html',
+                controller: BudgetApp.Controllers.EditBillController,
                 controllerAs: 'controller'
             })
             .state('addIncome', {
@@ -38,7 +50,7 @@ namespace BudgetApp {
                 controllerAs: 'controller'
             })
             .state('editIncome', {
-                url: '/editIncome',
+                url: '/editIncome/:id',
                 templateUrl: '/ngApp/views/editIncome.html',
                 controller: BudgetApp.Controllers.EditIncomeController,
                 controllerAs: 'controller'
@@ -47,6 +59,18 @@ namespace BudgetApp {
                 url: '/addGoal',
                 templateUrl: '/ngApp/views/addGoal.html',
                 controller: BudgetApp.Controllers.AddGoalController,
+                controllerAs: 'controller'
+            })
+            .state('editGoal', {
+                url: '/editGoal/:id',
+                templateUrl: '/ngApp/views/editGoal.html',
+                controller: BudgetApp.Controllers.EditGoalController,
+                controllerAs: 'controller'
+            })
+            .state('admin', {
+                url: '/admin',
+                templateUrl: '/ngApp/views/admin.html',
+                controller: BudgetApp.Controllers.AdminController,
                 controllerAs: 'controller'
             })
             .state('secret', {
@@ -71,12 +95,6 @@ namespace BudgetApp {
                 url: '/externalRegister',
                 templateUrl: '/ngApp/views/externalRegister.html',
                 controller: BudgetApp.Controllers.ExternalRegisterController,
-                controllerAs: 'controller'
-            }) 
-            .state('about', {
-                url: '/about',
-                templateUrl: '/ngApp/views/about.html',
-                controller: BudgetApp.Controllers.AboutController,
                 controllerAs: 'controller'
             })
             .state('notFound', {

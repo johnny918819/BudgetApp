@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -11,7 +11,7 @@ using Microsoft.AspNetCore.Authorization;
 namespace BudgetApp.API
 {
     [Route("api/[controller]")]
-    public class SecretsController : Controller
+    public class AdminController : Controller
     {
         // GET: api/values
         [HttpGet]
@@ -19,7 +19,7 @@ namespace BudgetApp.API
         public IEnumerable<string> Get()
         {
             var user = this.User;
-            return new string[] { "Page under Construction - this will view will soon allow Administrators to view and edit current User Accounts." };
+            return new string[] { "Page under Construction - Because a signed in user has full CRUD rights, this view (while exclusive to Admins) does not offer any additional functionality, however, it will soon allow Administrators to view and edit current User Accounts." };
         }
 
 
